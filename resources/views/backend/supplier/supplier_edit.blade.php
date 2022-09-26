@@ -11,41 +11,43 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                    <form action="{{route('supplier.store')}}" method="post" enctype="multipart/form-data" id="myForm">
+                    <form action="{{route('supplier.update')}}" method="post" enctype="multipart/form-data" id="myForm">
 
                         @csrf
 
-                        <h4 class="card-title">Add Supplier</h4> <br>
+                        <input type="hidden" name="id" value="{{$supplier->id}}">
+
+                        <h4 class="card-title">Update Supplier</h4> <br>
 
                         <div class="row mb-3">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Name</label>
                             <div class="form-group col-sm-10">
-                                <input class="form-control" name="name" type="text" id="example-text-input">
+                                <input class="form-control" name="name" type="text" id="example-text-input" value="{{$supplier->name}}">
                             </div>
                         </div>
 
                          <div class="row mb-3">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Mobile Number</label>
                             <div class="form-group col-sm-10">
-                                <input class="form-control" name="mobile_no" type="number" id="example-text-input">
+                                <input class="form-control" name="mobile_no" type="number" id="example-text-input" value="{{$supplier->mobile_no}}">
                             </div>
                         </div>
 
                          <div class="row mb-3">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Email</label>
                             <div class="form-group col-sm-10">
-                                <input class="form-control" name="email" type="email" id="example-text-input">
+                                <input class="form-control" name="email" type="email" id="example-text-input" value="{{$supplier->email}}">
                             </div>
                         </div>
 
                          <div class="row mb-3">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Address</label>
                             <div class="form-group col-sm-10">
-                                <textarea name="address" class="form-control"></textarea>
+                                <textarea name="address" class="form-control">{{$supplier->address}}</textarea>
                             </div>
                         </div>
 
-                        <input type="submit" value="Add Supplier" class="btn btn-success">
+                        <input type="submit" value="Update Supplier" class="btn btn-success">
                         <!-- end row -->
                     </form>
                     </div>
