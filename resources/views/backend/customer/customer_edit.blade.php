@@ -11,9 +11,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                    <form action="{{route('customer.store')}}" method="post" enctype="multipart/form-data" id="myForm">
+                    <form action="{{route('customer.update')}}" method="post" enctype="multipart/form-data" id="myForm">
 
                         @csrf
+
+                        <input type="hidden" name="id" value="{{$customer->id}}">
 
                         <h4 class="card-title">Add Supplier</h4> <br>
 
