@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2022 at 10:59 AM
+-- Generation Time: Sep 28, 2022 at 12:29 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `customers`
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -91,7 +91,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2022_09_26_062839_create_suppliers_table', 2),
-(6, '2022_09_27_052743_create_customers_table', 3);
+(6, '2022_09_27_052743_create_customers_table', 3),
+(7, '2022_09_28_054356_create_units_table', 4);
 
 -- --------------------------------------------------------
 
@@ -154,6 +155,23 @@ CREATE TABLE IF NOT EXISTS `suppliers` (
 INSERT INTO `suppliers` (`id`, `name`, `mobile_no`, `email`, `address`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 (1, 'admin', '124567485', 'admin@gmail.com', 'jashore', 1, 1, NULL, '2022-09-26 05:22:29', NULL),
 (2, 'Arman Hossain', '01516102676', 'arman@gmail.com', 'Jashore', 1, 1, 1, '2022-09-26 05:43:50', '2022-09-26 07:03:52');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `units`
+--
+
+CREATE TABLE IF NOT EXISTS `units` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
