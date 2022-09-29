@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2022 at 12:29 PM
+-- Generation Time: Sep 29, 2022 at 08:53 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -20,6 +20,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_inventory`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+(1, 'amaron', 1, 1, NULL, '2022-09-29 13:27:54', NULL),
+(2, 'mk', 1, 1, NULL, '2022-09-29 13:28:02', NULL),
+(3, 'gabrail', 1, 1, NULL, '2022-09-29 13:28:13', NULL),
+(4, 'art', 1, 1, NULL, '2022-09-29 13:28:21', NULL),
+(5, 'ucal', 1, 1, NULL, '2022-09-29 13:28:33', NULL);
 
 -- --------------------------------------------------------
 
@@ -79,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -92,7 +120,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2022_09_26_062839_create_suppliers_table', 2),
 (6, '2022_09_27_052743_create_customers_table', 3),
-(7, '2022_09_28_054356_create_units_table', 4);
+(7, '2022_09_28_054356_create_units_table', 4),
+(8, '2022_09_29_060029_create_categories_table', 5);
 
 -- --------------------------------------------------------
 
@@ -171,7 +200,17 @@ CREATE TABLE IF NOT EXISTS `units` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `units`
+--
+
+INSERT INTO `units` (`id`, `name`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+(1, 'SET', 1, 1, NULL, '2022-09-29 12:16:51', NULL),
+(2, 'PCS', 1, 1, NULL, '2022-09-29 12:19:52', NULL),
+(3, 'KG', 1, 1, NULL, '2022-09-29 12:20:01', NULL),
+(4, 'GRM', 1, 1, NULL, '2022-09-29 12:20:16', NULL);
 
 -- --------------------------------------------------------
 

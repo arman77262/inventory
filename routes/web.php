@@ -77,6 +77,12 @@ Route::controller(CategoryController::class)->group(function () {
     Route::get('/category/delete/{id}', 'CategoryDelete')->name('category.delete');
 });
 
+
+//Products routes
+Route::controller(CategoryController::class)->group(function () {
+    Route::get('/product/all', 'ProductAll')->name('product.all');
+});
+
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth'])->name('dashboard');
