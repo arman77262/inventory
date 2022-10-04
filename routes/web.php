@@ -6,6 +6,7 @@ use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\UnitController;
 use App\Http\Controllers\Pos\CategoryController;
+use App\Http\Controllers\Pos\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,8 +80,13 @@ Route::controller(CategoryController::class)->group(function () {
 
 
 //Products routes
-Route::controller(CategoryController::class)->group(function () {
+Route::controller(ProductController::class)->group(function () {
     Route::get('/product/all', 'ProductAll')->name('product.all');
+    Route::get('/product/add', 'ProductAdd')->name('product.add');
+    Route::post('/product/store', 'ProductStore')->name('product.store');
+    Route::get('/product/edit/{id}', 'ProductEdit')->name('product.edit');
+    Route::post('/product/update', 'ProductUpdate')->name('product.update');
+    Route::get('/product/delete/{id}', 'ProductDelete')->name('product.delete');
 });
 
 Route::get('/dashboard', function () {
