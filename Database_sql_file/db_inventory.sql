@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2022 at 09:05 AM
+-- Generation Time: Jun 05, 2023 at 01:41 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -25,8 +25,6 @@ SET time_zone = "+00:00";
 
 --
 -- Table structure for table `categories`
---
--- Creation: Sep 29, 2022 at 06:01 AM
 --
 
 CREATE TABLE `categories` (
@@ -55,8 +53,6 @@ INSERT INTO `categories` (`id`, `name`, `status`, `created_by`, `updated_by`, `c
 
 --
 -- Table structure for table `customers`
---
--- Creation: Sep 28, 2022 at 04:42 AM
 --
 
 CREATE TABLE `customers` (
@@ -87,8 +83,6 @@ INSERT INTO `customers` (`id`, `name`, `customer_image`, `mobile_no`, `email`, `
 --
 -- Table structure for table `failed_jobs`
 --
--- Creation: Sep 28, 2022 at 04:42 AM
---
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
@@ -104,8 +98,6 @@ CREATE TABLE `failed_jobs` (
 
 --
 -- Table structure for table `migrations`
---
--- Creation: Sep 28, 2022 at 04:42 AM
 --
 
 CREATE TABLE `migrations` (
@@ -135,8 +127,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 -- Table structure for table `password_resets`
 --
--- Creation: Sep 28, 2022 at 04:42 AM
---
 
 CREATE TABLE `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -148,8 +138,6 @@ CREATE TABLE `password_resets` (
 
 --
 -- Table structure for table `personal_access_tokens`
---
--- Creation: Sep 28, 2022 at 04:42 AM
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -168,8 +156,6 @@ CREATE TABLE `personal_access_tokens` (
 
 --
 -- Table structure for table `products`
---
--- Creation: Sep 29, 2022 at 07:16 AM
 --
 
 CREATE TABLE `products` (
@@ -193,14 +179,13 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `supplier_id`, `unit_id`, `category_id`, `name`, `quantity`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 (1, 7, 1, 11, 'Shocker', 0, 1, 1, NULL, '2022-10-04 12:44:19', '2022-10-04 12:44:19'),
 (3, 5, 2, 15, 'Connecting Rod', 0, 1, 1, NULL, '2022-10-04 12:44:08', '2022-10-04 12:44:08'),
-(4, 5, 2, 10, 'Fuel Pump R-15', 0, 1, 1, NULL, '2022-10-04 12:43:52', '2022-10-04 12:43:52');
+(4, 5, 2, 10, 'Fuel Pump R-15', 0, 1, 1, NULL, '2022-10-04 12:43:52', '2022-10-04 12:43:52'),
+(6, 5, 2, 12, 'Amaron Battry', 0, 1, 1, NULL, '2022-10-08 05:27:20', NULL);
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `purchases`
---
--- Creation: Oct 06, 2022 at 06:37 AM
 --
 
 CREATE TABLE `purchases` (
@@ -225,8 +210,6 @@ CREATE TABLE `purchases` (
 
 --
 -- Table structure for table `suppliers`
---
--- Creation: Sep 28, 2022 at 04:42 AM
 --
 
 CREATE TABLE `suppliers` (
@@ -256,8 +239,6 @@ INSERT INTO `suppliers` (`id`, `name`, `mobile_no`, `email`, `address`, `status`
 --
 -- Table structure for table `units`
 --
--- Creation: Sep 28, 2022 at 05:47 AM
---
 
 CREATE TABLE `units` (
   `id` bigint(20) UNSIGNED NOT NULL,
@@ -283,8 +264,6 @@ INSERT INTO `units` (`id`, `name`, `status`, `created_by`, `updated_by`, `create
 
 --
 -- Table structure for table `users`
---
--- Creation: Sep 28, 2022 at 04:42 AM
 --
 
 CREATE TABLE `users` (
@@ -419,7 +398,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `purchases`
